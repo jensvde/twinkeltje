@@ -1,0 +1,45 @@
+﻿@model IEnumerable<string[]>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    @{
+        ViewBag.Title = "Openingsuren";
+        Layout = "_Layout";
+    }
+    <link rel="stylesheet" href="~/css/openingsuren.css"/>
+    </head>
+<body>
+<h2>Openingsuren</h2>
+@if (@Model.ToList()[3][0].ToString().Equals("False"))
+    {
+      <p>We zijn momenteel gesloten.</p>  
+    }
+else
+{
+    <p>We zijn momenteel geopend.</p>  
+}
+<br/>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>Dag van de week</th>
+        <th class="centertd">Geopend vanaf</th>
+        <th class="centertd" >Geopend tot</th>
+    </tr>
+    </thead>
+
+    @for (int i = 0; i < 7; i++)
+    {
+        <tr>
+            <td class="dag">@Model.ToList()[0][i]</td>
+            <td class="vanaf">@Model.ToList()[1][i]</td>
+            <td class="tot">@Model.ToList()[2][i]</td>
+        </tr>
+    }
+</table>
+    <script src="js/openingsuren.js"></script>
+</body>
+
+
+

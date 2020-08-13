@@ -1,0 +1,65 @@
+﻿@model ContactViewModel
+@{
+    ViewData["Title"] = "Contacteer ons";
+}
+  <div class="col-md-6">
+<h2>Contacteer ons</h2>
+<p>Heeft u vragen, suggesties of opmerkingen? Laat het ons weten!</p>
+</div>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<div>
+    <div class="col-md-6">
+        <div>
+            @if (ViewBag.Message == null)
+            {
+                <div>
+                    <form method="post">
+                        <div class="form-group">
+                            <label asp-for="Name">Naam</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" 
+
+                            class="text-muted"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email">E-mail adres</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" 
+
+                            class="text-muted"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Message">Bericht</label>
+                            <textarea rows="5" cols="40" 
+
+                            asp-for="Message" class="form-control"></textarea>
+                            <span asp-validation-for="Message" 
+
+                            class="text-muted"></span>
+                        </div>
+                        <div>
+                            <button type="submit" 
+
+                            class="btn btn-success">Verstuur </button>
+                        </div>
+
+                    </form>
+                </div>
+            }
+        </div>
+
+        <div>
+            <div>
+                @if (ViewBag.Message != null)
+            {
+                    <div>@ViewBag.Message</div>
+
+
+                }
+            </div>
+        </div>
+    </div>
+
+</div>

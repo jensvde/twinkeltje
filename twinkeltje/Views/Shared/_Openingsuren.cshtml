@@ -1,0 +1,73 @@
+﻿<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="~/css/openingsuren.css"/>
+  
+@section Scripts
+{
+  <script src="~/js/openingsuren.js"></script>
+}
+</head>
+<body>
+<div>
+  <div id="main">
+    <div id="darkBack"></div>
+    <div id="logo"><img src="https://www.mercympls.com/wp-content/uploads/2018/01/MERCY_Logo_SF_StackedWide-e1516994401576.png" /></div>
+    
+    <div id="timeDiv"></div>
+    <label class="viewOpen" for="modal-state">View Hours&nbsp;&nbsp;<i class="fa fa-clock-o"></i></label>
+    <input type="checkbox" name="modal-state" id="modal-state">
+    <div class="modal-overlay">
+      <label for="modal-state" class="modal-overlay-close"></label>
+      <div class="modal">
+        <label class="button-close" for="modal-state"><i class="fa fa-times"></i></label>
+        <h2>We're Open At These Times</h2>
+        <div id="Wednesday" class="dateTime">
+          <div class="day">Wednesday</div>
+          <div class="time">4pm - 12am</div>
+        </div>
+        <br>
+        <div id="Thursday" class="dateTime">
+          <div class="day">Thursday</div>
+          <div class="time">4pm - 12am</div>
+        </div>
+        <br>
+        <div id="Friday" class="dateTime">
+          <div class="day">Friday</div>
+          <div class="time">4pm - 12am</div>
+        </div>
+        <br>
+        <div id="Saturday" class="dateTime">
+          <div class="day">Saturday</div>
+          <div class="time">1pm - 12am</div>
+        </div>
+        <br>
+        <div id="Sunday" class="dateTime">
+          <div class="day">Sunday</div>
+          <div class="time">1pm - 12am</div>
+        </div>
+        <br>
+        <div id="Monday" class="dateTime">
+          <div class="day">Monday</div>
+          <div class="time">Closed</div>
+        </div>
+        <br>
+        <div id="Tuesday" class="dateTime">
+          <div class="day">Tuesday</div>
+          <div class="time">Closed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+var todaysDate = new Date();
+$('#table tr td').each(function(index, element) {
+    if ($(this).text() === todaysDate.toString()) {
+        $(this).css("background-color", 'red');;
+    }
+
+});
+</script>
+</body>
+</html>
